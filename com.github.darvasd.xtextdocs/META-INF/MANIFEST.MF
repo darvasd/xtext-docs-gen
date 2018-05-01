@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xtext grammar documentation generator
+Bundle-SymbolicName: com.github.darvasd.xtextdocs
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.xtext;bundle-version="2.10.0",
+ com.google.guava;bundle-version="15.0.0",
+ org.junit;bundle-version="4.12.0",
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.xtext.generator;bundle-version="2.12.0"
+Export-Package: com.github.darvasd.xtextdocs,
+ com.github.darvasd.xtextdocs.fragment
+Import-Package: org.apache.log4j
+Bundle-Vendor: Daniel Darvas
+

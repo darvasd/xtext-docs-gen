@@ -1,0 +1,13 @@
+.metadata/
+local/
+
+**/.settings/
+**/bin/
+**/src-gen/
+**/target/
+**/xtend-gen/
+
+.travis.yml
+*.txt
+*.launch
+**/.antlr-generator-*.jar

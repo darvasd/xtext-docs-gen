@@ -1,0 +1,104 @@
+/**
+ * Example model from the Xtext documentation, see
+ * {@link https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html Xtext webpage}.
+ * 
+ * Extended with documentation for demonstration purposes.
+ */
+grammar org.example.domainmodel.Domainmodel with
+                                      org.eclipse.xtext.common.Terminals
+ 
+generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+
+/**
+ * A <b>domain model</b> is a collection of elements.
+ * <p>
+ * This is the root element of the grammar.
+ */
+Domainmodel:
+    (elements+=AbstractElement)*;
+
+/**
+ * An <b>element</b> is a <i>package declaration</i>,
+ * <i>import</i> or <i>type</i>.
+ * <p>
+ * This is the root element of the grammar.
+ */
+AbstractElement:
+    PackageDeclaration | Type | Import;
+
+/**
+ * A <b>package</b> has a <i>qualified name</i> and
+ * {@linkplain AbstractElement elements} inside.
+ * 
+ * @validation The package name shall not start with letter {@code P}.
+ */
+PackageDeclaration:
+    'package' name=QualifiedName '{'
+        (elements+=AbstractElement)*
+    '}';
+
+/**
+ * An <b>import</b> makes available another namespace.
+ * <p> 
+ * The imported namespace is defined by a qualified name,
+ * potential with a wildcard.
+ */
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard;
+  
+/**
+ * A <b>qualified name</b> has one or more segments with
+ * {@code .} as separators.
+ */
+QualifiedName:
+    ID ('.' ID)*;
+  
+/**
+ * A <b>qualified name</b>, optionally with a wildcard ({@code *})
+ * last segment.
+ */
+QualifiedNameWithWildcard:
+    QualifiedName '.*'?;
+  
+/**
+ * A <b>type</b> is either an atomic data type ({@link DataType}), or 
+ * an entity ({@link Entity}), containing several features.
+ */
+Type:
+    DataType | Entity;
+  
+/**
+ * A <b>data type</b> is an atomic named type.
+ */
+DataType:
+    'datatype' name=ID;
+
+/**
+ * An <b>entity</b> is a named structure of features.
+ * It can extend another entity, in this case the features of
+ * the extended entity will also be contained by this one.
+ */
+Entity:
+    'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{'
+        (features+=Feature)*
+    '}';
+
+/**
+ * A <b>feature</b> is a named reference to one or many
+ * objects of the given type.  
+ */
+Feature:
+    (many?='many')? name=ID ':' type=[Type|QualifiedName];
+    
+    
+/**
+ * A dummy enum to demonstrate its documentation.
+ */
+enum DummyEnum:
+	/** Representation of <b>number 1</b>. */
+	One = 'ONE' | 
+	/** Representation of <b>number 2</b>. */
+	Two = 'TWO' | Two = 'ZWEI' |
+	/** Representation of <b>number 3</b>. */
+	Three = 'THREE' 
+;

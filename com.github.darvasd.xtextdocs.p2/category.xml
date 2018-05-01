@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="com.github.darvasd.xtextdocs" version="1.0.0.qualifier">
+      <category name="com.github.darvasd.xtextdocs"/>
+   </bundle>
+   <category-def name="com.github.darvasd.xtextdocs" label="Xtext documentation generator">
+      <description>
+         Visit http://github.com/darvasd/xtext-docs-gen for more details.
+      </description>
+   </category-def>
+   <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
+</site>
