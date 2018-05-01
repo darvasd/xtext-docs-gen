@@ -4,7 +4,7 @@ A simple overview documentation generation for Xtext grammars.
 ## Example
 To get the gist of it, have a look at the example below, illustrating the documentation generation.
 
-[[docs/small_example.png]]
+![Documentation generation overview](docs/small_example.png)
 
 To check a more comprehensive example, see the [documentation](docs/ExampleDomainmodelDocs.md) generated for the [Domainmodel example grammar](examples/org.example.domainmodel/src/org/example/domainmodel/Domainmodel.xtext), using [this workflow file](examples/org.example.domainmodel/src/org/example/domainmodel/GenerateDomainmodel.mwe2).
 
