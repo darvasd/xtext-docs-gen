@@ -8,6 +8,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
- org.eclipse.xtend.lib.macro
-Export-Package: com.github.darvasd.xtextdocs.common.formatter
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.xtext
+Export-Package: com.github.darvasd.xtextdocs.common.formatter,
+ com.github.darvasd.xtextdocs.common.xtext
 

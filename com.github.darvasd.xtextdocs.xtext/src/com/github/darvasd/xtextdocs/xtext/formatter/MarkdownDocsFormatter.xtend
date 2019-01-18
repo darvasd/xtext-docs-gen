@@ -11,6 +11,7 @@
 package com.github.darvasd.xtextdocs.xtext.formatter
 
 import com.github.darvasd.xtextdocs.common.formatter.MarkdownTextFormatter
+import com.github.darvasd.xtextdocs.common.xtext.XtextTokenUtil
 import com.github.darvasd.xtextdocs.xtext.doccomment.DocComment
 import com.github.darvasd.xtextdocs.xtext.ruledoc.EnumRuleDoc
 import com.github.darvasd.xtextdocs.xtext.ruledoc.EnumRuleDoc.EnumLiteralDoc
@@ -40,12 +41,9 @@ import org.eclipse.xtext.Keyword
 import org.eclipse.xtext.NegatedToken
 import org.eclipse.xtext.ParserRule
 import org.eclipse.xtext.RuleCall
-import org.eclipse.xtext.TerminalRule
 import org.eclipse.xtext.UnorderedGroup
 import org.eclipse.xtext.UntilToken
 import org.eclipse.xtext.Wildcard
-import org.eclipse.xtext.nodemodel.ILeafNode
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
 class MarkdownDocsFormatter implements IGrammarDocsFormatter {
 	private static final String EXAMPLE_TAG = "@example"
@@ -232,33 +230,9 @@ class MarkdownDocsFormatter implements IGrammarDocsFormatter {
 	
 	private def ruleToCodeSnippet(AbstractRule rule) '''
 		```
-		«tokenTextOrUnknown(rule)»
+		«XtextTokenUtil.tokenTextOrUnknown(rule)»
 		```
 	'''
-	
-	private def tokenTextOrUnknown(AbstractRule rule) {
-		val ruleNode = NodeModelUtils.getNode(rule);
-		if (ruleNode === null) {
-			return "unknown";
-		} else {
-			val tokenText = ruleNode.leafNodes.filter[it | !isCommentNode(it)].map[it | it.text].join;
-			// Not using the NodeModelUtils.getTokenText as it would collapse the whitespaces.
-			return tokenText.trim().cleanupUnnecessaryNewlines();
-		}
-	}
-	
-	private def String cleanupUnnecessaryNewlines(String text) {
-		// Remove consecutive new lines (even if there are whitespaces in the empty line)
-		return text.replaceAll("\r?\n[ \t]*(\r?\n)", "$1");
-	}
-	
-	private def isCommentNode(ILeafNode node) {
-		val grammarElem = node.grammarElement;
-		if (grammarElem instanceof TerminalRule) {
-			return (grammarElem.name.equals("ML_COMMENT") || grammarElem.name.equals("SL_COMMENT"));
-		}
-		return false;
-	}
 
 	private def validationPartIfExists(DocComment headComment) '''
 		«IF headComment.getPartsWithTag(VALIDATION_TAG).isEmpty == false»
