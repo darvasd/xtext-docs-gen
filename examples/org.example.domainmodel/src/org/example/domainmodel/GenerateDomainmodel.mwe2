@@ -2,8 +2,8 @@ module org.example.domainmodel.GenerateDomainmodel
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
-import com.github.darvasd.xtextdocs.fragment.DocsGeneratorFragment
-import com.github.darvasd.xtextdocs.formatter.MarkdownFormatter
+import com.github.darvasd.xtextdocs.xtext.fragment.DocsGeneratorFragment
+import com.github.darvasd.xtextdocs.xtext.formatter.MarkdownFormatter
 
 var rootPath = ".."
 
@@ -36,7 +36,7 @@ Workflow {
 			// xtext-docs-gen
 			fragment = DocsGeneratorFragment auto-inject {
 				outputFileName = "docs.md"
-				formatter = com.github.darvasd.xtextdocs.formatter.MarkdownDocsFormatter {
+				formatter = com.github.darvasd.xtextdocs.xtext.formatter.MarkdownDocsFormatter {
 					includeDotReferenceGraph = true
 					includeSimplifiedGrammar = true
 					mainTitle = "Domain model grammar documentation"
