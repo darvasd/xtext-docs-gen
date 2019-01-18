@@ -8,7 +8,7 @@
 * SPDX-License-Identifier: EPL-2.0
 **********************************************************************/
 
-package com.github.darvasd.xtextdocs.xtext.formatter;
+package com.github.darvasd.xtextdocs.common.formatter;
 
 import java.util.List;
 

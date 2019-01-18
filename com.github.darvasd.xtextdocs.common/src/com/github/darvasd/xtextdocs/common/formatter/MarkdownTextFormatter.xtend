@@ -1,4 +1,4 @@
-package com.github.darvasd.xtextdocs.xtext.formatter
+package com.github.darvasd.xtextdocs.common.formatter
 
 import java.util.List
 
@@ -50,10 +50,10 @@ class MarkdownTextFormatter implements ITextFormatter {
 	
 	override unorderedList(List<String> originals) {
 		return '''
-		
-		«FOR line : originals»
-		    «"  "»- «line»
-		«ENDFOR»
+			
+			«FOR line : originals»
+				«"  "»- «line»
+			«ENDFOR»
 		'''
 	}
 }

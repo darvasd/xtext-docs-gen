@@ -12,6 +12,7 @@ package com.github.darvasd.xtextdocs.xtext.formatter
 
 import org.junit.Test
 import org.junit.Assert
+import com.github.darvasd.xtextdocs.common.formatter.MarkdownTextFormatter
 
 class DocCommentTextUtilTest {
 	@Test

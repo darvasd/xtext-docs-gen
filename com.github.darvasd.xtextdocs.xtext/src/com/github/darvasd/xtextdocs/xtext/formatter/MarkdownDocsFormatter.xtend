@@ -10,6 +10,7 @@
 
 package com.github.darvasd.xtextdocs.xtext.formatter
 
+import com.github.darvasd.xtextdocs.common.formatter.MarkdownTextFormatter
 import com.github.darvasd.xtextdocs.xtext.doccomment.DocComment
 import com.github.darvasd.xtextdocs.xtext.ruledoc.EnumRuleDoc
 import com.github.darvasd.xtextdocs.xtext.ruledoc.EnumRuleDoc.EnumLiteralDoc
@@ -36,15 +37,15 @@ import org.eclipse.xtext.CrossReference
 import org.eclipse.xtext.EnumLiteralDeclaration
 import org.eclipse.xtext.Group
 import org.eclipse.xtext.Keyword
+import org.eclipse.xtext.NegatedToken
 import org.eclipse.xtext.ParserRule
 import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.TerminalRule
 import org.eclipse.xtext.UnorderedGroup
+import org.eclipse.xtext.UntilToken
+import org.eclipse.xtext.Wildcard
 import org.eclipse.xtext.nodemodel.ILeafNode
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils
-import org.eclipse.xtext.NegatedToken
-import org.eclipse.xtext.Wildcard
-import org.eclipse.xtext.UntilToken
 
 class MarkdownDocsFormatter implements IGrammarDocsFormatter {
 	private static final String EXAMPLE_TAG = "@example"

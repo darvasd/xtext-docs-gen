@@ -15,8 +15,10 @@
 	</properties>
 	
 	<modules>
-		<module>com.github.darvasd.xtextdocs</module>
-		<module>com.github.darvasd.xtextdocs.test</module>
+		<module>com.github.darvasd.xtextdocs.common</module>
+		<module>com.github.darvasd.xtextdocs.common.test</module>
+		<module>com.github.darvasd.xtextdocs.xtext</module>
+		<module>com.github.darvasd.xtextdocs.xtext.test</module>
 		<module>com.github.darvasd.xtextdocs.target</module>
 		<module>com.github.darvasd.xtextdocs.p2</module>
 		<module>examples</module>

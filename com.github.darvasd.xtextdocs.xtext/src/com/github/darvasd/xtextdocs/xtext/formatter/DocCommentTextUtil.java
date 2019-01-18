@@ -17,6 +17,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.github.darvasd.xtextdocs.common.formatter.ITextFormatter;
+
 /**
  * Utility class with methods to represent the doc comment formatting using the
  * given text formatter.

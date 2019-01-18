@@ -8,10 +8,11 @@
  * SPDX-License-Identifier: EPL-2.0
  **********************************************************************/
 
-package com.github.darvasd.xtextdocs.xtext.formatter
+package com.github.darvasd.xtextdocs.common.formatter
 
 import org.junit.Assert
 import org.junit.Test
+import com.github.darvasd.xtextdocs.common.formatter.MarkdownTextFormatter
 
 class MarkdownTextFormatterTest {
 	@Test

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="com.github.darvasd.xtextdocs" version="1.0.0.qualifier">
+   <bundle id="com.github.darvasd.xtextdocs.common" version="1.0.0.qualifier">
+      <category name="com.github.darvasd.xtextdocs"/>
+   </bundle>
+   <bundle id="com.github.darvasd.xtextdocs.xtext" version="1.0.0.qualifier">
       <category name="com.github.darvasd.xtextdocs"/>
    </bundle>
    <category-def name="com.github.darvasd.xtextdocs" label="Xtext documentation generator">

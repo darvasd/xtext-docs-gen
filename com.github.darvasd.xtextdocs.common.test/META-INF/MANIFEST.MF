@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.github.darvasd.xtextdocs.common.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Daniel Darvas
+Fragment-Host: com.github.darvasd.xtextdocs.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.junit;version="4.12.0"
