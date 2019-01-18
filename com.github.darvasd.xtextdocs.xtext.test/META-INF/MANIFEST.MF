@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: com.github.darvasd.xtextdocs.xtext.test
-Bundle-SymbolicName: com.github.darvasd.xtextdocs.xtext.xtext.test
+Bundle-SymbolicName: com.github.darvasd.xtextdocs.xtext.test
 Bundle-Version: 1.0.0.qualifier
-Fragment-Host: com.github.darvasd.xtextdocs.xtext;bundle-version="1.0.0.qualifier"
+Fragment-Host: com.github.darvasd.xtextdocs.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
