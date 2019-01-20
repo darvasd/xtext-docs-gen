@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="com.github.darvasd.xtextdocs.common" version="1.0.0.qualifier"/>
-   <bundle id="com.github.darvasd.xtextdocs.xtext" version="1.0.0.qualifier">
+   <bundle id="com.github.darvasd.xtextdocs.common" version="1.1.0.qualifier"/>
+   <bundle id="com.github.darvasd.xtextdocs.xtext" version="1.1.0.qualifier">
       <category name="com.github.darvasd.xtextdocs.xtext"/>
    </bundle>
-   <bundle id="com.github.darvasd.xtextdocs.xcore" version="1.0.0.qualifier">
+   <bundle id="com.github.darvasd.xtextdocs.xcore" version="1.1.0.qualifier">
       <category name="com.github.darvasd.xtextdocs.xcore"/>
    </bundle>
    <category-def name="com.github.darvasd.xtextdocs.xtext" label="Xtext documentation generator">

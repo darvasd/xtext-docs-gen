@@ -288,8 +288,8 @@ digraph G {
 	AbstractElement -> Type;
 	AbstractElement -> Import;
 	PackageDeclaration [ color="black", fillcolor="#e6e6ff" ];
-	PackageDeclaration -> QualifiedName;
 	PackageDeclaration -> AbstractElement;
+	PackageDeclaration -> QualifiedName;
 	Import [ color="black", fillcolor="#e6e6ff" ];
 	Import -> QualifiedNameWithWildcard;
 	QualifiedName [ color="black", fillcolor="#e6e6ff" ];
@@ -298,15 +298,15 @@ digraph G {
 	QualifiedNameWithWildcard [ color="black", fillcolor="#e6e6ff" ];
 	QualifiedNameWithWildcard -> QualifiedName;
 	Type [ color="black", fillcolor="#e6e6ff" ];
-	Type -> Entity;
 	Type -> DataType;
+	Type -> Entity;
 	DataType [ color="black", fillcolor="#e6e6ff" ];
 	ID [ color="black", fillcolor="#e6e6ff", style="dashed" ];
 	DataType -> ID [ style="dashed" ];
 	Entity [ color="black", fillcolor="#e6e6ff" ];
-	Entity -> Feature;
 	ID [ color="black", fillcolor="#e6e6ff", style="dashed" ];
 	Entity -> ID [ style="dashed" ];
+	Entity -> Feature;
 	Entity -> QualifiedName;
 	Feature [ color="black", fillcolor="#e6e6ff" ];
 	ID [ color="black", fillcolor="#e6e6ff", style="dashed" ];

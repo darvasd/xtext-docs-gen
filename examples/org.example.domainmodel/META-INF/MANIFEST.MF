@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.example.domainmodel
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-SymbolicName: org.example.domainmodel; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
  org.eclipse.emf.common,
- com.github.darvasd.xtextdocs.xtext;bundle-version="1.0.0"
+ com.github.darvasd.xtextdocs.xtext;bundle-version="1.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.example.domainmodel.scoping,
  org.example.domainmodel.serializer,
