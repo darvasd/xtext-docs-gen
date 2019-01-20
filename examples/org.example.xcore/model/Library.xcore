@@ -1,0 +1,92 @@
+package org.example.xcore.library
+
+// This example Xcore model is an extension of the tutorial located at https://wiki.eclipse.org/Xcore
+// See https://wiki.eclipse.org/index.php?title=Xcore&action=credits for the original authors
+
+import java.util.Date
+import java.text.SimpleDateFormat
+import java.text.ParseException
+
+@GenModel(documentation="Representation of a library.\n\nRoot element of the library metamodel.")
+class Library {
+	@GenModel(documentation="Name of the library. The documentation supports both <b>HTML</b> <i>formatting</i> tags and doc comment style {@code formatting}.")
+	String name
+	
+	@GenModel(documentation="Address of the library. Linking to other elements is possible: {@link Library} or {@link Library like this}.")
+	String address
+	
+	@GenModel(documentation="Books stored in the library.")
+	contains Book[0..*] books opposite library
+	
+	@GenModel(documentation="Authors known in the library.")
+	contains Writer[0..*] authors opposite library
+	
+	@GenModel(documentation="Returns a book known by the given title. Returns {@code null} if no book is known with the given title.")
+	op Book getBook(String title) {
+		for (Book book : books) {
+			if (title == book.title) return book
+		}
+		return null
+	}
+}
+
+@GenModel(documentation="Representation of a physical instance of a <b>book</b>,
+	located in a <i>library</i>.")
+class Book {
+	@GenModel(documentation="Title of the book.")
+	String title
+	
+	@GenModel(documentation="Category of the book. Exactly one of the defined
+		{@link BookCategory book categories}.")
+	BookCategory bookCategory
+	
+	@GenModel(documentation="Number of pages. Expected to be positive.")
+	int pages
+	
+	@GenModel(documentation="Date of release.")
+	Date copyright
+	
+	@GenModel(documentation="The library containing this book instance.")
+	container Library library opposite books
+	
+	@GenModel(documentation="Writers of the book.\n\nThe referred writers are expected to be contained by `this.library`.")
+	refers Writer[1..*] authors opposite books
+}
+
+class Writer {
+	String name
+	container Library library opposite authors
+	refers Book[] books opposite authors
+	
+	derived String lastName get {
+		if (name !== null) {
+			val int index = name.lastIndexOf(' ')
+			if (index != -1) name.substring(index+1) else name
+		}
+	}
+}
+
+@GenModel(documentation="Known book categories.")
+enum BookCategory {
+	@GenModel(documentation="Mistery books. It includes fairy tales too.")
+	Mistery as "M"
+	
+	@GenModel(documentation="Science-fiction books.")
+	ScienceFiction as "S"
+	
+	@GenModel(documentation="Biography books.")
+	Biography as "B"
+}
+
+@GenModel(documentation="Date (year, month, day) representation.")
+type Date wraps Date 
+create {
+	try {
+		if (it !== null) new SimpleDateFormat("yyyy-MM-dd").parse(it);
+	} catch (ParseException e) {
+		throw new RuntimeException(e);
+	}
+}
+convert {
+	if (it !== null) new SimpleDateFormat("yyyy-MM-dd").format(it);
+}

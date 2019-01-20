@@ -1,0 +1,38 @@
+module org.examle.xcore.library.GenerateXcoreDocs
+
+import com.github.darvasd.xtextdocs.xcore.fragment.DocsGeneratorFragment
+import com.github.darvasd.xtextdocs.xcore.formatter.MarkdownXcoreDocsFormatter
+
+var rootPath = ".."
+
+// Inspired by https://www.nikostotz.de/blog/combine-xcore-xtend-ecore-and-maven/
+Workflow {
+	bean = org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup {}
+	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+		platformUri = rootPath
+		scanClassPath = true
+	}
+	component = org.eclipse.xtext.mwe.Reader {
+		register = org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup {}
+		register = org.eclipse.xtext.ecore.EcoreSupport {}
+		path =  "model"
+		path = "src"
+		loadFromResourceSet = {}
+		validate = org.eclipse.xtext.mwe.Validator.Disabled {}
+	}
+
+
+	component = DocsGeneratorFragment {
+		uri = "model/Library.xcore"
+		outputFileName = "LibraryXcore.md"
+		formatter = MarkdownXcoreDocsFormatter {
+			mainTitle = "Library.xcore metamodel description"
+			gitbookLinkStyle = true
+			titleLevelOffset = "0" // optional
+			showOriginalXcoreCode = true  // optional
+			includeToc = true // optional
+		}
+	}
+
+	// Multiple 'component = com.github.darvasd.xtextdocs.xcore.fragment.DocsGeneratorFragment' can be included here
+}
