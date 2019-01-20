@@ -8,7 +8,7 @@
 * SPDX-License-Identifier: EPL-2.0
 **********************************************************************/
 
-package com.github.darvasd.xtextdocs.xtext.formatter;
+package com.github.darvasd.xtextdocs.common.formatter;
 
 import java.util.List;
 import java.util.function.Function;
@@ -16,8 +16,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import com.github.darvasd.xtextdocs.common.formatter.ITextFormatter;
 
 /**
  * Utility class with methods to represent the doc comment formatting using the
@@ -50,9 +48,13 @@ public class DocCommentTextUtil {
 	 *            Original text containing doc comment tags.
 	 * @param formatter
 	 *            Formatter to be used for the replacement.
-	 * @return Formatted text
+	 * @return Formatted text. It will be {@code null} if the given text is null.
 	 */
 	public static String format(String text, ITextFormatter formatter) {
+		if (text == null) {
+			return null;
+		}
+		
 		String ret = text;
 
 		// {@code ...} or `...`

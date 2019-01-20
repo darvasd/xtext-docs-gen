@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: EPL-2.0
  **********************************************************************/
 
-package com.github.darvasd.xtextdocs.xtext.formatter
+package com.github.darvasd.xtextdocs.common.formatter
 
 import org.junit.Test
 import org.junit.Assert
@@ -52,10 +52,10 @@ class DocCommentTextUtilTest {
 		</ul>''';
 		val formatter = MarkdownTextFormatter.INSTANCE;
 		val expected = '''
-		First line
-		
-		  - Item 1
-		  - Item 2
+			First line
+			
+			  - Item 1
+			  - Item 2
 		''';
 
 		Assert.assertEquals(expected, DocCommentTextUtil.format(input, formatter));
@@ -67,9 +67,9 @@ class DocCommentTextUtilTest {
 		First line<ul><li>Item 1</li><li>Item 2</li></ul>''';
 		val formatter = MarkdownTextFormatter.INSTANCE;
 		val expected = '''
-		First line
-		  - Item 1
-		  - Item 2
+			First line
+			  - Item 1
+			  - Item 2
 		''';
 
 		Assert.assertEquals(expected, DocCommentTextUtil.format(input, formatter));
@@ -85,10 +85,10 @@ class DocCommentTextUtilTest {
 		</ul>''';
 		val formatter = MarkdownTextFormatter.INSTANCE;
 		val expected = '''
-		First line
-		
-		  - Item `1`
-		  - Item **2**
+			First line
+			
+			  - Item `1`
+			  - Item **2**
 		''';
 
 		Assert.assertEquals(expected, DocCommentTextUtil.format(input, formatter));

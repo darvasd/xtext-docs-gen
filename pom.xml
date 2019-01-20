@@ -17,6 +17,7 @@
 	<modules>
 		<module>com.github.darvasd.xtextdocs.common</module>
 		<module>com.github.darvasd.xtextdocs.common.test</module>
+		<module>com.github.darvasd.xtextdocs.xcore</module>
 		<module>com.github.darvasd.xtextdocs.xtext</module>
 		<module>com.github.darvasd.xtextdocs.xtext.test</module>
 		<module>com.github.darvasd.xtextdocs.target</module>

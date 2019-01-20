@@ -44,6 +44,7 @@ import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.UnorderedGroup
 import org.eclipse.xtext.UntilToken
 import org.eclipse.xtext.Wildcard
+import com.github.darvasd.xtextdocs.common.formatter.DocCommentTextUtil
 
 class MarkdownDocsFormatter implements IGrammarDocsFormatter {
 	private static final String EXAMPLE_TAG = "@example"

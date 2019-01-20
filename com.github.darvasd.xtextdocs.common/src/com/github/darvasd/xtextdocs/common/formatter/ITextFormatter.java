@@ -26,7 +26,7 @@ public interface ITextFormatter {
 	 * @return Original text, escaped where necessary.
 	 */
 	String escape(String original);
-	
+
 	/**
 	 * Returns the given original text as bold.
 	 * <p>
@@ -34,8 +34,9 @@ public interface ITextFormatter {
 	 * {@code **abc**}, a HTML implementation may return {@code <b>abc</b>}, etc.
 	 * 
 	 * @param original
-	 *            Original text.
-	 * @return Original text as bold.
+	 *            Original text. Can be {@code null}.
+	 * @return Original text as bold. Returns empty string (without any formatting
+	 *         characters) if the argument is {@code null} or empty string.
 	 */
 	String bold(String original);
 
@@ -43,8 +44,9 @@ public interface ITextFormatter {
 	 * Returns the given original text as italic.
 	 * 
 	 * @param original
-	 *            Original text.
-	 * @return Original text as italic.
+	 *            Original text. Can be {@code null}.
+	 * @return Original text as italic. Returns empty string (without any formatting
+	 *         characters) if the argument is {@code null} or empty string.
 	 */
 	String italic(String original);
 
@@ -52,8 +54,10 @@ public interface ITextFormatter {
 	 * Returns the given original text as inline code.
 	 * 
 	 * @param original
-	 *            Original text.
-	 * @return Original text as inline code.
+	 *            Original text. Can be {@code null}.
+	 * @return Original text as inline code. Returns empty string (without any
+	 *         formatting characters) if the argument is {@code null} or empty
+	 *         string.
 	 */
 	String inlineCode(String original);
 
@@ -83,7 +87,7 @@ public interface ITextFormatter {
 	 * @return Textual representation of the link.
 	 */
 	String link(String text, String target);
-	
+
 	/**
 	 * Returns the given lines as unordered list.
 	 * 

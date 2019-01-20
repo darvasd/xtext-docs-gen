@@ -18,8 +18,12 @@ class MarkdownTextFormatter implements ITextFormatter {
 	}
 
 	override bold(String original) {
+		if (original.isNullOrEmpty) {
+			return "";
+		}
+		
 		// The '**' does not support multiline!
-		return '''**«original.replaceAll("(\\r|\\n)+(?=\\S)", "**$1**")»**''';
+		return '''**«original.replaceAll("((?:\\r|\\n)+)(?=\\S)", "**$1**")»**''';
 	}
 
 	override codeBlock(String original) {
@@ -30,12 +34,20 @@ class MarkdownTextFormatter implements ITextFormatter {
 	}
 
 	override inlineCode(String original) {
+		if (original.isNullOrEmpty) {
+			return "";
+		}
+		
 		return '''`«original»`''';
 	}
 
 	override italic(String original) {
+		if (original.isNullOrEmpty) {
+			return "";
+		}
+		
 		// The '_' does not support multiline!
-		return '''_«original.replaceAll("(\\r|\\n)+", "_$1_")»_''';
+		return '''_«original.replaceAll("((?:\\r|\\n)+)", "_$1_")»_''';
 	}
 
 	override newLine() {
