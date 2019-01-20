@@ -30,14 +30,12 @@ class Library {
 	}
 }
 
-@GenModel(documentation="Representation of a physical instance of a <b>book</b>,
-	located in a <i>library</i>.")
+@GenModel(documentation="Representation of a physical instance of a <b>book</b>, located in a <i>library</i>.")
 class Book {
 	@GenModel(documentation="Title of the book.")
 	String title
 	
-	@GenModel(documentation="Category of the book. Exactly one of the defined
-		{@link BookCategory book categories}.")
+	@GenModel(documentation="Category of the book. Exactly one of the defined {@link BookCategory book categories}.")
 	BookCategory bookCategory
 	
 	@GenModel(documentation="Number of pages. Expected to be positive.")

@@ -59,8 +59,7 @@ class Library {
 ```
 ###  Class `Book` {#anchor2}
 
-_Representation of a physical instance of a **book**,_
-_	located in a _library_._
+_Representation of a physical instance of a **book**, located in a _library_._
 
 **Extends**: `EObject`
 
@@ -68,8 +67,7 @@ _	located in a _library_._
 - **title** : `EString`
     * _Title of the book._
 - **bookCategory** : [BookCategory](#anchor4)
-    * _Category of the book. Exactly one of the defined_
-      _		[book categories](#anchor4)._
+    * _Category of the book. Exactly one of the defined [book categories](#anchor4)._
 - **pages** : `EInt`
     * _Number of pages. Expected to be positive._
 - **copyright** : [Date](#anchor5)
@@ -89,13 +87,11 @@ _	located in a _library_._
 
 
 ```
-@GenModel(documentation="Representation of a physical instance of a <b>book</b>,
-	located in a <i>library</i>.")
+@GenModel(documentation="Representation of a physical instance of a <b>book</b>, located in a <i>library</i>.")
 class Book {
 	@GenModel(documentation="Title of the book.")
 	String title
-	@GenModel(documentation="Category of the book. Exactly one of the defined
-		{@link BookCategory book categories}.")
+	@GenModel(documentation="Category of the book. Exactly one of the defined {@link BookCategory book categories}.")
 	BookCategory bookCategory
 	@GenModel(documentation="Number of pages. Expected to be positive.")
 	int pages
