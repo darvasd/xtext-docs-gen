@@ -16,10 +16,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="small_example.svg"
-   inkscape:export-filename="D:\Dropbox\workspaces\xtext-docs-gen\docs\small_example.png"
-   inkscape:export-xdpi="74.965973"
-   inkscape:export-ydpi="74.965973">
+   sodipodi:docname="xtext_small_example.svg"
+   inkscape:export-filename="D:\Dropbox\workspaces\xtext-docs-gen\docs\xtext_small_example.png"
+   inkscape:export-xdpi="74.942612"
+   inkscape:export-ydpi="74.942612">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -30,7 +30,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="108.8255"
+     inkscape:cx="-260.89033"
      inkscape:cy="342.84989"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -211,7 +211,7 @@
          id="tspan4282"
          x="246.67984"
          y="225.7034"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Italic';fill:#214478;fill-opacity:1">xtext-docs-gen</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Italic';fill:#214478;fill-opacity:1">xtext-docs-gen  (com.github.darvasd.xtextdocsgen.xtext)</tspan><tspan
          sodipodi:role="line"
          x="246.67984"
          y="240.7034"
