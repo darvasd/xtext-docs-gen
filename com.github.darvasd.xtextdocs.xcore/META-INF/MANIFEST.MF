@@ -15,5 +15,5 @@ Require-Bundle: com.google.guava,
  org.eclipse.emf.ecore.xcore.lib,
  org.eclipse.emf.ecore.xcore,
  org.eclipse.emf.codegen.ecore,
- com.github.darvasd.xtextdocs.common;bundle-version="1.1.0"
+ com.github.darvasd.xtextdocs.common;bundle-version="1.1.0";visibility:=reexport
 
