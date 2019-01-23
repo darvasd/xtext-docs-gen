@@ -52,8 +52,8 @@ To check a more comprehensive example, see the [documentation](docs/ExampleXcore
 ### Usage
 1. Add `com.github.darvasd.xtextdocs.xcore` as depencency to the `MANIFEST.MF` of your plug-in project containing the Xcore metamodel(s).
    * You can use the http://darvasd.github.io/xtext-docs-gen/release/ update site to fetch it.
-1. You will need in addition the following dependencies: ``
-1. Create an MWE2 workflow description (`.mwe2` file) that will generate the Xcore documentation. Take [this]() as an example for the Xcore metamodel loading. For the documentation generation configuration, here is an example:
+1. You may need in addition the following dependencies (you can make them optional if they are only required for the documentation generation): `org.eclipse.core.runtime`, `org.eclipse.emf.ecore`, `org.eclipse.emf.ecore.xcore.lib`, `org.eclipse.emf.mwe2.launch`, `org.eclipse.emf.mwe2.lib`,  `org.eclipse.emf.ecore.xcore`, `org.eclipse.emf.codegen.ecore`, `org.apache.commons.logging`.
+1. Create an MWE2 workflow description (`.mwe2` file) that will generate the Xcore documentation. Take [this](https://github.com/darvasd/xtext-docs-gen/tree/master/examples/org.example.xcore/src/org/example/xcore/library/GenerateXcoreDocs.mwe2) as an example for the Xcore metamodel loading. For the documentation generation configuration, here is an example:
    ```
 	language = StandardLanguage {
 	[...]
